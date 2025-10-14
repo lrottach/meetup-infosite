@@ -50,7 +50,7 @@ class MeetupApp {
         const mapPlaceholder = document.querySelector('.map-placeholder');
         if (mapPlaceholder) {
             mapPlaceholder.addEventListener('click', () => {
-                const address = encodeURIComponent('Maximilianstraße 13, 80539 München, Germany');
+                const address = encodeURIComponent('isolutions AG, The circle 38, Kloten, Switzerland');
                 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${address}`;
                 window.open(googleMapsUrl, '_blank');
             });
