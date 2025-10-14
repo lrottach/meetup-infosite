@@ -17,7 +17,7 @@ A modern, responsive static website for the Tech Meetup Munich event, built with
 - **Date**: Friday, October 25th, 2025
 - **Time**: 6:00 PM - 9:30 PM (Doors open at 5:30 PM)
 - **Location**: Munich Tech Hub, Maximilianstraße 13, 80539 München
-- **Capacity**: 150+ attendees
+- **Capacity**: max 50 attendees
 - **Cost**: Free event with registration required
 
 ## 🗓️ Agenda
