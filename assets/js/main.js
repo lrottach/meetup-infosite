@@ -29,6 +29,7 @@ class MeetupApp {
         this.setupGlobalEvents();
         this.setupMapClick();
         this.setupScrollToTop();
+        this.setupSeatCounter();
     }
 
     setupGlobalEvents() {
@@ -120,6 +121,40 @@ class MeetupApp {
         } else {
             header.classList.remove('scrolled');
         }
+    }
+
+    setupSeatCounter() {
+        const ribbon = document.querySelector('.hero__fomo-ribbon');
+        if (!ribbon) return;
+
+        // Simulated seat data (could be replaced by real API later)
+        const totalSeats = 50;
+        let claimed = 22 + Math.floor(Math.random() * 3); // starting baseline
+
+        const updateRibbon = () => {
+            const remaining = totalSeats - claimed;
+            if (remaining <= 8) {
+                ribbon.classList.add('ribbon-hot');
+            }
+            ribbon.innerHTML = `<strong>${remaining} seats left</strong> – momentum building. Register now.`;
+        };
+
+        updateRibbon();
+
+        // Simulate gradual registrations
+        const interval = setInterval(() => {
+            if (claimed >= totalSeats - 3) { // keep a small buffer
+                clearInterval(interval);
+                ribbon.innerHTML = '<strong>Almost full</strong> – final seats. Act now.';
+                ribbon.classList.add('ribbon-critical');
+                return;
+            }
+            // Random chance of new registration
+            if (Math.random() > 0.55) {
+                claimed += 1;
+                updateRibbon();
+            }
+        }, 6000);
     }
 }
 
