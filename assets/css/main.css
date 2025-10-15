@@ -2,15 +2,15 @@
 :root {
     --color-primary: #2563eb;
     --color-primary-dark: #1d4ed8;
-    --color-secondary: #64748b;
-    --color-accent: #f59e0b;
-    --color-background: #ffffff;
-    --color-surface: #f8fafc;
-    --color-text: #1e293b;
-    --color-text-light: #64748b;
-    --color-border: #e2e8f0;
-    --color-success: #10b981;
-    --color-error: #ef4444;
+        --color-primary: #06b6d4; /* cyan accent */
+        --color-primary-dark: #0891b2;
+        --color-secondary: #6366f1; /* indigo secondary */
+        --color-accent: #f59e0b;
+        --color-background: #0f172a; /* dark navy */
+        --color-surface: #1e293b; /* elevated panel */
+        --color-text: #f1f5f9;
+        --color-text-light: #94a3b8;
+        --color-border: #334155;
     
     --font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-family-heading: 'Inter', system-ui, sans-serif;
@@ -55,11 +55,10 @@
 
 * {
     margin: 0;
-    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+        background: rgba(255,255,255,0.04);
 }
 
 body {
@@ -67,12 +66,13 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--color-text);
-    background-color: var(--color-background);
+    background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f172a 55%);
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
-    display: block;
+        color: #fff;
     max-width: 100%;
 }
 
@@ -167,7 +167,7 @@ input, button, textarea, select {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-xl);
     font-weight: 700;
-    color: var(--color-primary);
+    color: #0f172a; /* darker brand tone */
     margin: 0;
 }
 
@@ -181,7 +181,7 @@ input, button, textarea, select {
 
 .nav__link {
     text-decoration: none;
-    color: var(--color-text);
+    color: #334155; /* slate dark for better contrast */
     font-weight: 500;
     transition: var(--transition-colors);
     position: relative;
@@ -189,7 +189,7 @@ input, button, textarea, select {
 
 .nav__link:hover,
 .nav__link--active {
-    color: var(--color-primary);
+    color: #1d4ed8; /* refined primary hover */
 }
 
 .nav__link::after {
@@ -199,7 +199,7 @@ input, button, textarea, select {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: #1d4ed8;
     transition: width 0.3s ease;
 }
 
@@ -220,7 +220,7 @@ input, button, textarea, select {
 .nav__toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-text);
+    background-color: #334155;
     margin: 3px 0;
     transition: var(--transition-base);
 }
@@ -317,6 +317,77 @@ input, button, textarea, select {
     flex-wrap: wrap;
 }
 
+/* Hero Enhancements */
+.hero__badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+.hero-badge {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    padding: 0.4rem 0.75rem;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.5px;
+}
+.hero__fomo-ribbon {
+    background: linear-gradient(90deg, var(--color-accent) 0%, #ffb347 100%);
+    color: #1e293b;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-sm);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+    display: inline-block;
+    box-shadow: var(--shadow-md);
+}
+.hero__fomo-ribbon.ribbon-hot {
+    background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+    color: #fff;
+}
+.hero__fomo-ribbon.ribbon-critical {
+    background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+    color: #fff;
+    animation: pulse-critical 1.5s infinite;
+}
+@keyframes pulse-critical {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+.hero__value-points {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) auto var(--spacing-md);
+    max-width: 760px;
+    display: grid;
+    gap: var(--spacing-sm);
+}
+.hero__value-points li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #fff;
+    font-size: var(--font-size-base);
+}
+.hero__value-points li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+.hero__micro-cta {
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    color: #fff;
+    margin-bottom: var(--spacing-lg);
+}
+
 /* Details Section */
 .details {
     padding: var(--spacing-4xl) 0;
@@ -325,13 +396,14 @@ input, button, textarea, select {
 
 .details__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-xl);
 }
 
 .detail-card {
     background: white;
-    padding: var(--spacing-xl);
+    /* Slightly reduced padding to allow four cards in one row */
+    padding: var(--spacing-lg) var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -350,7 +422,8 @@ input, button, textarea, select {
 
 .detail-card__title {
     font-family: var(--font-family-heading);
-    font-size: var(--font-size-xl);
+    /* Slightly smaller title for compact card */
+    font-size: calc(var(--font-size-lg) + 2px);
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
@@ -375,6 +448,11 @@ input, button, textarea, select {
 .agenda {
     padding: var(--spacing-4xl) 0;
     background-color: white;
+}
+
+/* Darker agenda headline for reduced brightness */
+.agenda .section-title {
+    color: #1a202c;
 }
 
 .agenda__timeline {
@@ -548,7 +626,15 @@ input, button, textarea, select {
 
 .map-placeholder p:first-child {
     font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+
+@media (min-width: 1100px) {
+    /* Force exactly four columns on wider screens */
+    .details__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 }
 
 .map-placeholder p:nth-child(2) {
@@ -564,7 +650,8 @@ input, button, textarea, select {
 /* Registration Section */
 .register {
     padding: var(--spacing-4xl) 0;
-    background-color: white;
+    /* Softer background to reduce overall brightness */
+    background: linear-gradient(180deg, #f5f7fa 0%, #eef1f5 100%);
 }
 
 .register__content {
@@ -578,7 +665,8 @@ input, button, textarea, select {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-2xl);
     font-weight: 700;
-    color: var(--color-text);
+    /* Darker heading for improved contrast */
+    color: #1a202c;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -589,7 +677,8 @@ input, button, textarea, select {
 }
 
 .benefits-list li {
-    color: var(--color-text-light);
+    /* Darker benefit text for readability on lighter background */
+    color: #2d3748;
     margin-bottom: var(--spacing-md);
     padding-left: var(--spacing-xl);
     position: relative;
@@ -601,6 +690,97 @@ input, button, textarea, select {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+/* Value Proposition Section */
+.value-prop {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+    color: #fff;
+    padding: var(--spacing-4xl) 0;
+}
+.value-prop .section-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+.value-prop__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-xl);
+}
+.value-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-base);
+}
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(255,255,255,0.3);
+}
+.value-card__icon {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+}
+.value-card__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+.value-card__text {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-md);
+}
+.value-card__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+}
+.value-card__bullets li {
+    position: relative;
+    padding-left: 1rem;
+}
+.value-card__bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+}
+
+/* Registration FOMO Enhancements */
+.register__fomo {
+    margin-top: var(--spacing-lg);
+    font-weight: 600;
+    /* Stronger contrast without max brightness */
+    color: #1f2937;
+    font-size: var(--font-size-base);
+    opacity: 1;
+}
+.register__intro {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: #1f2937;
+}
+.register__note {
+    display: block;
+    margin-top: var(--spacing-md);
+    color: #374151;
+}
+.register__link-container p,
+.register__link-container strong {
+    color: #1f2937;
 }
 
 /* Registration Buttons */
@@ -630,6 +810,23 @@ input, button, textarea, select {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
 }
+
+/* ================= Debug Visibility Patch (temporary) ================= */
+main, .main-content, section, .container {
+    opacity: 1;
+    visibility: visible;
+}
+.hero__overlay { pointer-events: none; }
+.hero__content { position: relative; z-index: 2; }
+.hero__background { z-index: 0; }
+section { position: relative; z-index: 1; }
+/* Remove accidental background inheritance from universal selector previously applied */
+section, .container, .detail-card, .value-card {
+    background: transparent;
+}
+/* Ensure text visible on dark background */
+.value-prop .value-card__text, .value-prop .value-card__title, .value-prop .value-card__bullets li { color: #fff; }
+/* ===================================================================== */
 
 .form-group {
     margin-bottom: var(--spacing-lg);

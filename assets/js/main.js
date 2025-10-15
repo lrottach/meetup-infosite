@@ -29,7 +29,6 @@ class MeetupApp {
         this.setupGlobalEvents();
         this.setupMapClick();
         this.setupScrollToTop();
-        this.setupCountdown();
     }
 
     setupGlobalEvents() {
