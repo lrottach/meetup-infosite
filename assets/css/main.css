@@ -635,7 +635,8 @@ input, button, textarea, select {
 /* Registration Section */
 .register {
     padding: var(--spacing-4xl) 0;
-    background-color: white;
+    /* Softer background to reduce overall brightness */
+    background: linear-gradient(180deg, #f5f7fa 0%, #eef1f5 100%);
 }
 
 .register__content {
@@ -660,7 +661,8 @@ input, button, textarea, select {
 }
 
 .benefits-list li {
-    color: var(--color-text-light);
+    /* Slightly darken benefit text for better contrast and reduced glare */
+    color: #4a5568;
     margin-bottom: var(--spacing-md);
     padding-left: var(--spacing-xl);
     position: relative;
@@ -745,17 +747,20 @@ input, button, textarea, select {
 .register__fomo {
     margin-top: var(--spacing-lg);
     font-weight: 600;
-    color: var(--color-primary-dark);
+    /* Use a deeper tone and slightly reduced opacity to avoid shouting */
+    color: #2d3748;
     font-size: var(--font-size-base);
+    opacity: 0.9;
 }
 .register__intro {
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
+    color: #2d3748;
 }
 .register__note {
     display: block;
     margin-top: var(--spacing-md);
-    color: var(--color-text-light);
+    color: #5a677a;
 }
 
 /* Registration Buttons */
