@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GitHub Copilot Meetup//Agentic Coding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:agentic-coding-20251105@githubcopilotmeetup
+DTSTAMP:20251015T120000Z
+DTSTART:20251105T154500Z
+DTEND:20251105T170000Z
+SUMMARY:Agentic Coding with GitHub Copilot Agent
+DESCRIPTION:Live demo, strategic insight and networking on autonomous AI coding workflows.
+LOCATION:isolutions ag, The Circle 38, Kloten, Switzerland
+END:VEVENT
+END:VCALENDAR

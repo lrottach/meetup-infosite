@@ -9,10 +9,13 @@
     <meta property="og:description" content="A deep dive into the new developer world with GitHub Copilot Agent">
     <meta property="og:type" content="event">
     <title>GitHub Copilot Agent in Action - November 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header site-header--dark">
         <nav class="nav" aria-label="Main navigation">
             <div class="nav__logo">
                 <h2>GitHub Copilot Meetup</h2>
@@ -24,6 +27,7 @@
                 <li><a href="#agenda" class="nav__link">Agenda</a></li>
                 <li><a href="#location" class="nav__link">Location</a></li>
                 <li><a href="#register" class="nav__link">Register</a></li>
+                <li><a href="#register" class="nav__cta" aria-label="Register now">Register</a></li>
             </ul>
             <button class="nav__toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -43,15 +47,28 @@
                      class="hero__image">
             </div>
             <div class="hero__content">
-                <h1 class="hero__title">Zero Day Solutions: Agentic Coding with Github Copilot Agent</h1>
-                <p class="hero__subtitle">A Deep dive into the new developer world</p>
+                <div class="hero__badge-row" aria-label="Event highlights">
+                    <span class="hero-badge">Live Demo</span>
+                    <span class="hero-badge">Hands‑On AI</span>
+                    <span class="hero-badge">Expert Panel</span>
+                    <span class="hero-badge">Networking</span>
+                </div>
+                <h1 class="hero__title">Agentic Coding Breakthrough with GitHub Copilot Agent</h1>
+                <p class="hero__subtitle">One night. Real code. The future of development revealed.</p>
+                <div class="hero__fomo-ribbon" role="note" aria-label="Limited seat notice">
+                    <strong>Only 50 seats • Filling fast</strong> – Secure your spot before it's full.
+                </div>
                 <p class="hero__description">
-                    Join us for an exciting evening exploring GitHub Copilot Agent, 
-                    the revolutionary AI-powered development tool that's transforming how we write code.
-
-                    Whether you're a developer, engineer, or tech enthusiast, 
-                    this event will give you hands-on insights into the future of AI-assisted development.
+                    Discover how autonomous AI coding workflows are reshaping delivery speed, quality and team collaboration. 
+                    This is not another slide deck session – you will see production‑grade agent flows, live problem solving and 
+                    how to safely integrate AI into engineering processes.
                 </p>
+                <ul class="hero__value-points" aria-label="Top reasons to attend">
+                    <li>See advanced Copilot Agent use cases before they become mainstream</li>
+                    <li>Leave with practical patterns to accelerate your 2026 roadmap</li>
+                    <li>Ask senior practitioners & a Microsoft MVP anything – no fluff</li>
+                </ul>
+                <p class="hero__micro-cta">Miss this and you'll be catching up for months – be part of the first wave.</p>
                 <div class="hero__date-time">
                     <time datetime="2025-11-05T17:00">
                         05.11.2025 | 16:45 - 18:00
@@ -61,6 +78,56 @@
                     <a href="https://www.linkedin.com/events/zero-daysolutions-agenticcoding7383402489729175552/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Register on LinkedIn</a>
                     <a href="https://www.meetup.com/github-copilot-user-group-zurich/events/311546750/?slug=github-copilot-user-group-zurich&isFirstPublish=true" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Register on Meetup</a>
                     <a href="#details" class="btn btn--secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Conference Branding / Value Proposition -->
+        <section id="why" class="value-prop" aria-labelledby="value-prop-heading">
+            <div class="container">
+                <h2 id="value-prop-heading" class="section-title">Why This Night Matters</h2>
+                <div class="value-prop__grid">
+                    <div class="value-card">
+                        <div class="value-card__icon" aria-hidden="true">⚙️</div>
+                        <h3 class="value-card__title">Engineering Acceleration</h3>
+                        <p class="value-card__text">See live agent flows that cut through boilerplate, reduce review cycles and unlock higher iteration speed.</p>
+                        <ul class="value-card__bullets">
+                            <li>Pattern libraries</li>
+                            <li>Workflow orchestration</li>
+                            <li>Safety boundaries</li>
+                        </ul>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon" aria-hidden="true">🧠</div>
+                        <h3 class="value-card__title">Strategic Insight</h3>
+                        <p class="value-card__text">Understand where autonomous coding changes staffing, velocity forecasting and technical debt strategy.</p>
+                        <ul class="value-card__bullets">
+                            <li>Roadmap impact</li>
+                            <li>Risk mitigation</li>
+                            <li>Governance models</li>
+                        </ul>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon" aria-hidden="true">🤝</div>
+                        <h3 class="value-card__title">Network & Peer Exchange</h3>
+                        <p class="value-card__text">Connect with practitioners experimenting in production today – skip theory, get real learnings.</p>
+                        <ul class="value-card__bullets">
+                            <li>Real constraints</li>
+                            <li>Architecture choices</li>
+                            <li>Toolchain evolution</li>
+                        </ul>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card__icon" aria-hidden="true">🚀</div>
+                        <h3 class="value-card__title">First‑Mover Advantage</h3>
+                        <p class="value-card__text">Position yourself ahead of 2026 adoption curves – what you learn here compounds over the next year.</p>
+                        <ul class="value-card__bullets">
+                            <li>Competitive edge</li>
+                            <li>Talent attraction</li>
+                            <li>Innovation velocity</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -270,23 +337,50 @@
         </section>
 
         <!-- Registration Section -->
-        <section id="register" class="register">
+        <section id="logistics" class="logistics" aria-labelledby="logistics-title">
             <div class="container">
-                <h2 class="section-title">Register for the Event</h2>
+                <h2 id="logistics-title" class="section-title">Logistics & Planning</h2>
+                <div class="logistics__grid">
+                    <div class="logistics__panel">
+                        <h3>Key Info</h3>
+                        <ul class="logistics-list">
+                            <li><strong>Doors:</strong> Open 16:30 – Grab a drink & settle in</li>
+                            <li><strong>Content Start:</strong> 16:45 sharp</li>
+                            <li><strong>Live Coding:</strong> 17:00 – 18:00</li>
+                            <li><strong>Networking & Snacks:</strong> After the session</li>
+                            <li><strong>Food & Drinks:</strong> Included (vegetarian options)</li>
+                        </ul>
+                        <div class="calendar-buttons" aria-label="Add event to calendar">
+                            <a href="assets/event.ics" class="calendar-btn" download>Download ICS</a>
+                            <a class="calendar-btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Agentic+Coding+with+GitHub+Copilot+Agent&dates=20251105T154500Z/20251105T170000Z&details=Live+demo+and+strategic+insights+on+agentic+coding&location=isolutions+ag,+The+Circle+38,+Kloten,+Switzerland">Google Calendar</a>
+                            <a class="calendar-btn" href="mailto:?subject=Add%20to%20Outlook%20Calendar&body=Download%20the%20attached%20ICS%20file%20to%20add%20the%20event." >Outlook</a>
+                        </div>
+                    </div>
+                    <div class="logistics__map">
+                        <iframe title="Venue location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.2077792918274!2d8.560934!3d47.450280!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900a7504b3d1f5%3A0x4f5d3e64d6b8f2c7!2sThe%20Circle%2038%2C%208058%20Z%C3%BCrich-Flughafen!5e0!3m2!1sen!2sch!4v0000000000000" width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <small>Address: isolutions ag, The Circle 38, Kloten, Switzerland</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="register" class="register" aria-labelledby="register-title">
+            <div class="container">
+                <h2 id="register-title" class="section-title">Event – Secure Your Seat</h2>
                 <div class="register__content">
                     <div class="register__info">
-                        <h3>Why Attend?</h3>
+                        <h3>Still Deciding?</h3>
                         <ul class="benefits-list">
-                            <li>Learn from industry experts and thought leaders</li>
-                            <li>Network with like-minded professionals</li>
-                            <li>Discover the latest technology trends</li>
-                            <li>Enjoy complimentary food and beverages</li>
-                            <li>Gain insights into career opportunities</li>
+                            <li>Be early in adopting agentic coding – shape its direction</li>
+                            <li>See real workflows you can adapt next sprint</li>
+                            <li>Ask a Microsoft MVP & practitioners for candid answers</li>
+                            <li>Build peer connections for continuous knowledge exchange</li>
+                            <li>Enjoy quality food & drinks while learning</li>
                         </ul>
+                        <p class="register__fomo">Every month you delay structured AI adoption your opportunity gap widens. Join the teams moving first.</p>
                     </div>
                     <div class="register__form">
                         <div class="register__link-container">
-                            <p>Choose your preferred registration platform:</p>
+                            <p class="register__intro">Only <strong>50 seats</strong> – we recommend registering now. Choose your platform:</p>
                             <div class="registration-buttons">
                                 <a href="https://www.linkedin.com/events/zero-daysolutions-agenticcoding7383402489729175552/" 
                                    target="_blank" 
@@ -301,13 +395,41 @@
                                     Register on Meetup
                                 </a>
                             </div>
-                            <small>Choose either platform - both lead to the same event</small>
+                            <small class="register__note">Either platform works – spots are confirmed on a first‑come basis.</small>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+        <div class="container">
+            <h2 id="faq-title" class="section-title">FAQ</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Is this for beginners?</summary>
+                    <p>Yes. While we showcase advanced agent workflows, each concept is framed so engineers of varied experience can follow. Curiosity is the only prerequisite.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Will slides be shared?</summary>
+                    <p>We focus on live interaction more than decks. A concise recap (key patterns & links) will be published to attendees after the event.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Photography / recording policy?</summary>
+                    <p>Casual photos are fine. Please avoid recording full screen shares without speaker consent. We foster an open environment for experimentation.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need to bring a laptop?</summary>
+                    <p>Not required. You can simply observe. If you do bring one, you may try similar prompts during networking.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Will there be follow-up sessions?</summary>
+                    <p>Yes. Attendees help shape future deep dives (evaluation frameworks, secure prompt strategies, team enablement models).</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="container">
