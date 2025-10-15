@@ -399,6 +399,11 @@ input, button, textarea, select {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-xl);
 }
+@media (min-width: 1000px) {
+    .details__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 .detail-card {
     background: white;
@@ -422,8 +427,7 @@ input, button, textarea, select {
 
 .detail-card__title {
     font-family: var(--font-family-heading);
-    /* Slightly smaller title for compact card */
-    font-size: calc(var(--font-size-lg) + 2px);
+    font-size: var(--font-size-lg);
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
