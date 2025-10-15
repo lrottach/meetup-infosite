@@ -55,8 +55,6 @@
 
 * {
     margin: 0;
-        background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f172a 55%);
-        min-height: 100vh;
 }
 
 html {
@@ -68,8 +66,9 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--color-text);
-    background-color: var(--color-background);
+    background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f172a 55%);
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
@@ -786,6 +785,23 @@ input, button, textarea, select {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
 }
+
+/* ================= Debug Visibility Patch (temporary) ================= */
+main, .main-content, section, .container {
+    opacity: 1;
+    visibility: visible;
+}
+.hero__overlay { pointer-events: none; }
+.hero__content { position: relative; z-index: 2; }
+.hero__background { z-index: 0; }
+section { position: relative; z-index: 1; }
+/* Remove accidental background inheritance from universal selector previously applied */
+section, .container, .detail-card, .value-card {
+    background: transparent;
+}
+/* Ensure text visible on dark background */
+.value-prop .value-card__text, .value-prop .value-card__title, .value-prop .value-card__bullets li { color: #fff; }
+/* ===================================================================== */
 
 .form-group {
     margin-bottom: var(--spacing-lg);
