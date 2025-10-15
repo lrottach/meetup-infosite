@@ -28,8 +28,8 @@ class MeetupApp {
         // Setup global event listeners
         this.setupGlobalEvents();
         this.setupMapClick();
-        this.setupScrollToTop();
-        this.setupSeatCounter();
+    this.setupScrollToTop();
+    this.setupCountdown();
     }
 
     setupGlobalEvents() {
@@ -123,38 +123,54 @@ class MeetupApp {
         }
     }
 
-    setupSeatCounter() {
-        const ribbon = document.querySelector('.hero__fomo-ribbon');
-        if (!ribbon) return;
+    setupCountdown() {
+        const countdownEl = document.getElementById('countdown');
+        if (!countdownEl) return;
 
-        // Simulated seat data (could be replaced by real API later)
-        const totalSeats = 50;
-        let claimed = 22 + Math.floor(Math.random() * 3); // starting baseline
+        // Event start: 2025-11-05 16:45 local (assume Europe/Zurich)
+        // Using ISO string without timezone to rely on local time; adjust if needed
+        const eventDate = new Date('2025-11-05T16:45:00');
 
-        const updateRibbon = () => {
-            const remaining = totalSeats - claimed;
-            if (remaining <= 8) {
-                ribbon.classList.add('ribbon-hot');
-            }
-            ribbon.innerHTML = `<strong>${remaining} seats left</strong> – momentum building. Register now.`;
-        };
+        const updateCountdown = () => {
+            const now = new Date();
+            let diff = eventDate - now;
 
-        updateRibbon();
-
-        // Simulate gradual registrations
-        const interval = setInterval(() => {
-            if (claimed >= totalSeats - 3) { // keep a small buffer
-                clearInterval(interval);
-                ribbon.innerHTML = '<strong>Almost full</strong> – final seats. Act now.';
-                ribbon.classList.add('ribbon-critical');
+            if (diff <= 0) {
+                countdownEl.textContent = 'Event is starting';
                 return;
             }
-            // Random chance of new registration
-            if (Math.random() > 0.55) {
-                claimed += 1;
-                updateRibbon();
+
+            const minutesTotal = Math.floor(diff / 60000);
+            const days = Math.floor(minutesTotal / (60 * 24));
+            const hours = Math.floor((minutesTotal % (60 * 24)) / 60);
+            const minutes = minutesTotal % 60;
+
+            // Format string
+            const parts = [];
+            if (days > 0) parts.push(days + 'd');
+            parts.push(hours + 'h');
+            parts.push(minutes + 'm');
+            countdownEl.textContent = parts.join(' ');
+        };
+
+        // Initial update
+        updateCountdown();
+        // Update every minute (if under 2 hours we can switch to every 15s for precision) 
+        let interval = setInterval(updateCountdown, 60000);
+
+        // Optional: refine updates when close (< 2 hours)
+        const refineIntervalCheck = () => {
+            const now = new Date();
+            const diff = eventDate - now;
+            if (diff < 2 * 60 * 60 * 1000 && interval) {
+                clearInterval(interval);
+                interval = setInterval(updateCountdown, 15000);
             }
-        }, 6000);
+            if (diff <= 0 && interval) {
+                clearInterval(interval);
+            }
+        };
+        setInterval(refineIntervalCheck, 60000);
     }
 }
 
