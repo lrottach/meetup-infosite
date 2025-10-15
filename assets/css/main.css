@@ -167,7 +167,7 @@ input, button, textarea, select {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-xl);
     font-weight: 700;
-    color: var(--color-primary);
+    color: #0f172a; /* darker brand tone */
     margin: 0;
 }
 
@@ -181,7 +181,7 @@ input, button, textarea, select {
 
 .nav__link {
     text-decoration: none;
-    color: var(--color-text);
+    color: #334155; /* slate dark for better contrast */
     font-weight: 500;
     transition: var(--transition-colors);
     position: relative;
@@ -189,7 +189,7 @@ input, button, textarea, select {
 
 .nav__link:hover,
 .nav__link--active {
-    color: var(--color-primary);
+    color: #1d4ed8; /* refined primary hover */
 }
 
 .nav__link::after {
@@ -199,7 +199,7 @@ input, button, textarea, select {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: #1d4ed8;
     transition: width 0.3s ease;
 }
 
@@ -220,7 +220,7 @@ input, button, textarea, select {
 .nav__toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-text);
+    background-color: #334155;
     margin: 3px 0;
     transition: var(--transition-base);
 }
