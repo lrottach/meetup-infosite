@@ -603,6 +603,26 @@ input, button, textarea, select {
     top: 0;
 }
 
+/* Registration Buttons */
+.registration-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.btn--registration {
+    flex: 1;
+    min-width: 200px;
+}
+
+@media (min-width: 768px) {
+    .registration-buttons {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+}
+
 /* Form Styles */
 .registration-form {
     background: var(--color-surface);
