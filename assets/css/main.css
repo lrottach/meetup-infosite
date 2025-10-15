@@ -396,13 +396,14 @@ input, button, textarea, select {
 
 .details__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-xl);
 }
 
 .detail-card {
     background: white;
-    padding: var(--spacing-xl);
+    /* Slightly reduced padding to allow four cards in one row */
+    padding: var(--spacing-lg) var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -421,7 +422,8 @@ input, button, textarea, select {
 
 .detail-card__title {
     font-family: var(--font-family-heading);
-    font-size: var(--font-size-xl);
+    /* Slightly smaller title for compact card */
+    font-size: calc(var(--font-size-lg) + 2px);
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
@@ -446,6 +448,11 @@ input, button, textarea, select {
 .agenda {
     padding: var(--spacing-4xl) 0;
     background-color: white;
+}
+
+/* Darker agenda headline for reduced brightness */
+.agenda .section-title {
+    color: #1a202c;
 }
 
 .agenda__timeline {
@@ -619,7 +626,15 @@ input, button, textarea, select {
 
 .map-placeholder p:first-child {
     font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+
+@media (min-width: 1100px) {
+    /* Force exactly four columns on wider screens */
+    .details__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 }
 
 .map-placeholder p:nth-child(2) {
@@ -650,7 +665,8 @@ input, button, textarea, select {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-2xl);
     font-weight: 700;
-    color: var(--color-text);
+    /* Darker heading for improved contrast */
+    color: #1a202c;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -661,8 +677,8 @@ input, button, textarea, select {
 }
 
 .benefits-list li {
-    /* Slightly darken benefit text for better contrast and reduced glare */
-    color: #4a5568;
+    /* Darker benefit text for readability on lighter background */
+    color: #2d3748;
     margin-bottom: var(--spacing-md);
     padding-left: var(--spacing-xl);
     position: relative;
@@ -747,20 +763,24 @@ input, button, textarea, select {
 .register__fomo {
     margin-top: var(--spacing-lg);
     font-weight: 600;
-    /* Use a deeper tone and slightly reduced opacity to avoid shouting */
-    color: #2d3748;
+    /* Stronger contrast without max brightness */
+    color: #1f2937;
     font-size: var(--font-size-base);
-    opacity: 0.9;
+    opacity: 1;
 }
 .register__intro {
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
-    color: #2d3748;
+    color: #1f2937;
 }
 .register__note {
     display: block;
     margin-top: var(--spacing-md);
-    color: #5a677a;
+    color: #374151;
+}
+.register__link-container p,
+.register__link-container strong {
+    color: #1f2937;
 }
 
 /* Registration Buttons */
